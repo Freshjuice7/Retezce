@@ -12,36 +12,37 @@ public class Main {
 
         String jmeno = "váClAv vAšek";
         jmeno = jmeno.toLowerCase();
-        jmeno = jmeno.substring(0,1).toUpperCase() + jmeno.substring(1, jmeno.indexOf(" ")) + " " + jmeno.substring(jmeno.indexOf(" ")+1, jmeno.indexOf(" ")+2).toUpperCase() + jmeno.substring(jmeno.indexOf(" ")+2);
+        jmeno = jmeno.substring(0, 1).toUpperCase() + jmeno.substring(1, jmeno.indexOf(" ")) + " " + jmeno.substring(jmeno.indexOf(" ") + 1, jmeno.indexOf(" ") + 2).toUpperCase() + jmeno.substring(jmeno.indexOf(" ") + 2);
         System.out.println(jmeno);
 
         //-------------------------------------------------------------------------------------------------------------------//
 
-        int pocetMezer =0;
+        int pocetMezer = 0;
         String text = "adas da dsada d ";
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) == ' ') {
                 pocetMezer++;
             }
         }
-        System.out.println("řetězec má " + text.length()+ " znaků");
+        System.out.println("řetězec má " + text.length() + " znaků");
         System.out.println(pocetMezer);
 
         //-------------------------------------------------------------------------------------------------------------------//
 
-        String slovo ="blovo";
+        String slovo = "blovo";
         char pismenoJedna = slovo.charAt(0);
-        char pismenoDva = slovo.charAt(slovo.length()-1);
-        System.out.println("text začíná " +pismenoJedna + " a končí písmenem " + pismenoDva);
+        char pismenoDva = slovo.charAt(slovo.length() - 1);
+        System.out.println("text začíná " + pismenoJedna + " a končí písmenem " + pismenoDva);
 
         //-------------------------------------------------------------------------------------------------------------------//
 
+
         String promena = "slobblbproprorspro";
         String hledam = "pro";
-        System.out.println("Slovo pro se nachází na : " +promena.indexOf(hledam) + " pozici");
+        System.out.println("Slovo pro se nachází na : " + promena.indexOf(hledam) + " pozici");
 
 
-        int index  = promena.indexOf(hledam);
+        int index = promena.indexOf(hledam);
         int pocet = 0;
 
         while (index != -1) {
@@ -52,23 +53,49 @@ public class Main {
         if (pocet == 0) {
             System.out.println("Slovo se v textu nenachází.");
         } else {
-            System.out.println("výskyty slova " + hledam + " je: "+pocet );
+            System.out.println("výskyty slova " + hledam + " je: " + pocet);
         }
+
 
         //-------------------------------------------------------------------------------------------------------------------//
 
 
         String email = "vasvac21@gasos-ro.cz";
-        email =email.toLowerCase();
-        String emailPrvniCast = email.substring(0,email.indexOf("@"));
-        String emailDruhaCast = email.substring(email.indexOf("@")+1);
+        email = email.toLowerCase();
+        String emailPrvniCast = email.substring(0, email.indexOf("@"));
+        String emailDruhaCast = email.substring(email.indexOf("@") + 1);
         System.out.println("email prvni cast: " + emailPrvniCast);
         System.out.println("email druha cast: " + emailDruhaCast);
 
+
         //-------------------------------------------------------------------------------------------------------------------//
 
-        String slovo2 ="neco";
+        String slovo2 = "STŮL";
+        String obraceny = new StringBuilder(slovo2).reverse().toString();
+        System.out.println("obraceny slovo je: " + obraceny);
 
+
+        StringBuilder slovo3 = new StringBuilder(slovo2);
+        for (int i = 0; i < slovo2.length(); i++) {
+            if (i % 2 == 0) {
+                char prozatim = slovo2.charAt(i);
+                char prozatimNew = Character.toUpperCase(prozatim);
+                slovo3.setCharAt(i, prozatimNew);
+            }
+
+        }
+        System.out.println(slovo3);
+
+
+        StringBuilder slovo4 = new StringBuilder(slovo2);
+        slovo4 = new StringBuilder(slovo4.substring(0, slovo4.length() - 1));
+        slovo4.append(obraceny);
+        System.out.println(slovo4);
+
+
+
+
+    //-------------------------------------------------------------------------------------------------------------------//
 
 
 
